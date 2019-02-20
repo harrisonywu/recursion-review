@@ -49,7 +49,7 @@ var parseJSON = function(json) {
   var pairParser = function (pair) {
     var pairObj = {};
     
-    return; 
+    return "'string':0" ; 
   };
   
   var arrayParser = function(array) {
@@ -65,11 +65,13 @@ var parseJSON = function(json) {
   };
   
   var elementsParser = function(elements) {
-    if (elements.length === 0) {
-      return 0;
+    //base case
+    if (elements === '[]') {
+      return ;
+    } else { // recursive case
+      
     }
-    var element = elements[0];
-    return valueParser(element);
+    
   };    
   
   var valueParser = function(value) {
